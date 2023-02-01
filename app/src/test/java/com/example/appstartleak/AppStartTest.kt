@@ -1,6 +1,7 @@
 package com.example.appstartleak
 
 import android.app.Application
+import android.os.Build
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -28,6 +29,11 @@ class AppStartTest {
         runtime.gc()
         val used = (runtime.totalMemory() - runtime.freeMemory()) / 1024.0 / 1024.0
         println("Used heap Size = $used MB")
+
+        if (Build.VERSION.SDK_INT == 33) {
+            println("Sleeping for 2 minutes so you can get a heap dump :)")
+            Thread.sleep(60 * 1000 * 2)
+        }
     }
 
 }

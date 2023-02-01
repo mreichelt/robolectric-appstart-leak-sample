@@ -20,3 +20,9 @@ Used heap Size = 447.7919006347656 MB
 
 See picture:
 ![Shows app start test results with growing memory](appstart_tests.png)
+
+## How to analyze Heap Dump
+
+1. Download [leak_robo_appstart.hprof.7z](leak_robo_appstart.hprof.7z) 
+2. Decompress it
+3. Analyze it with a tool of your choice, e.g. [VisualVM](https://visualvm.github.io/)
